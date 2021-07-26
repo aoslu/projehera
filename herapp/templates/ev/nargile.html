@@ -1,0 +1,104 @@
+{%extends 'base.html'%}{%load static%}
+{%block slider_section%} {%endblock%}
+
+{%block brand%} <div class="brand">
+    <div class="brand-bg">
+        <div class="container">
+            <center>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="titlepage">
+                                <h2>BİZDEN FOTOĞRAFLAR</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+            <div class="row">
+                {%for fotoooooos in fotoooooo%}
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
+                    <div class="brand_box">
+                        {%if fotoooooo%}
+                        <a href="{{ fotoooooos.resim.url }}" class="swipebox" >
+                            <img src="{{ fotoooooos.resim.url }}" alt="images" /> {% endif %}
+                        </a>
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <a class="read-more " href="{%url 'contact'%} ">{{fotoooooos.resim_adi | safe | truncatechars_html:28}}</a>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+                <br> <br> <br>
+                <nav aria-label="Page navigation example">
+                     <ul class="pagination justify-content-end">
+                        {%if urunler.has_previous%}
+                        <li class="page-item">
+                            <a class="page-link" href="?sayfa={{urunler.previous_page_number}}" tabindex="-1">Önceki Sayfa</a>
+                        </li>{%else%}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Önce ki</a>
+                        </li> {%endif%}
+                        <li class="page-item"><a class="page-link" href="#">{{urunler.number}}</a></li>
+                        {% if urunler.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?sayfa={{urunler.next_page_number}}">Sonra ki</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?sayfa={{urunler.paginator.num_pages}}">Son Sayfa</a>
+                        </li>
+                        {%else%} {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div> {%endblock%}
+
+{% block clients %} {%endblock%}
+{%block about%} {%endblock%}
+{%block contact%} {%endblock%}
+{%block footer%}
+<!-- footer -->
+<footer>
+    <div id="contact" class="footer">
+        <div class="container">
+            <div class="row pdn-top-30">
+                <div class="col-md-12 ">
+                    <div class="footer-box">
+                        <div class="headinga">
+                                <h3>Adres ve Bilgilerimiz</h3>
+                                <span>HERA KÖMÜRCÜLÜK İNŞAAT GIDA VE DIŞ TİCARET LİMİTED ŞİRKETİ</span>
+                                <span>ADRES : FEVZİ ÇAKMAK MAHALLESİ, SADULAH SEVER KÜMESİ, KÜME EVLERİ NO:49, FOÇA-İZMİR</span>
+                                <span>FOÇA MAL MÜDÜRLÜĞÜ Vergi No : 4610909752 </span>
+                                <p>05532623798
+                                    <br>hakankaplanlar35@gmail.com</p>
+                            </div>
+                        <ul class="location_icon">
+                            <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                            <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                        <div class="menu-bottom">
+                            <ul class="link">
+                                <li><a href="{%url 'anasayfa'%}">Anasayfa</a> </li>
+                                <li><a href="{%url 'special'%}">Nakliye</a></li>
+                                <li><a href="{%url 'brand'%}">Ürünler</a> </li>
+                                <li><a href="{%url 'contact'%}">Bize Ulaşın</a></li>
+                                <li><a href="{%url 'about'%}">Biz Kimiz</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>2021 Yapıldı<a href="www.google.com.tr\">AKIN OSLU</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+{%endblock%}

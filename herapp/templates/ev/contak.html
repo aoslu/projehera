@@ -1,0 +1,40 @@
+{%extends 'base.html'%}{%load static%} {%block contact%} {%load crispy_forms_tags%}
+<!-- contact -->
+<div class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                        <h2>Contact us</h2>
+                    </div>
+                    <form class="main_form" action="{%url 'contact'%}" method="POST">
+                    {%csrf_token%}
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <input class="form-control" placeholder="Your name" type="text" name="Your Name">
+                                {{form.name}}
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <input class="form-control" placeholder="Email" type="text" name="Email">
+                                {{form.email}}
+                            </div>
+                            <div class="col-md-12">
+                                <textarea class="textarea" placeholder="Message"></textarea>
+                                {{form.message}}
+                            </div>
+                            <div class=" col-md-12">
+                                <button class="send">Mesaj Gönder</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end contact -->
+{%endblock%} {%block about%} {%endblock%} {%block dropdown%} {%endblock%} {%block brand%}{%endblock%} {%block clients%}{%endblock%} {%block slider_section%}{% endblock%}
+
+
+
+
+
