@@ -27,7 +27,7 @@ SECRET_KEY=env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','127.0.0.1:8000','localhost','localhost:8000','3.67.174.214 ','3.67.174.214 :8000']
+ALLOWED_HOSTS = ['127.0.0.1','127.0.0.1:8000','localhost','localhost:8000','18.157.178.157 ','18.157.178.157:8000']
 
 # Application definition
 
@@ -133,7 +133,7 @@ MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
 
 AWS_ACCESS_KEY_ID = env('ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env('SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = 'heraproje'
+AWS_STORAGE_BUCKET_NAME = 'projehera'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS= {
     'CacheControl':'max-age=86400',
